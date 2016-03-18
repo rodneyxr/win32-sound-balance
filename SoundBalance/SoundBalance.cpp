@@ -17,8 +17,8 @@ void closeEndpoint();
 float getMasterVolume();
 float getLeftVolume();
 float getRightVolume();
-void setLeftVolume(const float const &volume);
-void setRightVolume(const float const &volume);
+void setLeftVolume(const float &volume);
+void setRightVolume(const float &volume);
 
 IAudioEndpointVolume *endpointVolume = NULL;
 
@@ -75,12 +75,12 @@ float getMasterVolume() {
 }
 
 // Sets the left channel's volume
-void setLeftVolume(const float const &volume) {
+void setLeftVolume(const float &volume) {
 	endpointVolume->SetChannelVolumeLevelScalar(0, volume, NULL);
 }
 
 // Sets the right channel's volume
-void setRightVolume(const float const &volume) {
+void setRightVolume(const float &volume) {
 	endpointVolume->SetChannelVolumeLevelScalar(1, volume, NULL);
 }
 
